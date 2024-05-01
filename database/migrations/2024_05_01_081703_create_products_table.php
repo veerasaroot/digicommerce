@@ -19,7 +19,9 @@ return new class extends Migration
             $table->integer('price');
             $table->text('description');
             $table->string('image');
+            $table->text('images')->nullable();
             $table->boolean('featured')->default(false);
+            $table->unsignedInteger('quantity')->default(10);
             $table->foreignIdFor(App\Models\Category::class);
             $table->timestamps();
         });
